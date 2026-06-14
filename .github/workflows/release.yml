@@ -27,6 +27,9 @@ jobs:
             target: linux
 
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash      # 跨平台统一使用 bash，避免 Windows runner 的 PowerShell 语法冲突
 
     steps:
       - name: Checkout
